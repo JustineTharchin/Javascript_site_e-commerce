@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orinoco - informations clients </title>
+    <link rel="stylesheet" href="../scss/style.scss">
+</head>
+<body>
+<!-- HEADER -->
+     <header class="header">
+        <a href="index.html"><img class="header_logo" src="../../images/logo_orinoco.png" alt="Logo Orinoco"></a>
+        <nav class="header_nav">
+            <a class="header_panier" href="panier.html"><i class="fas fa-shopping-cart"></i>Panier</a>
+        </nav>  
+    </header>
+    <main>
+    <div id="container_form">
+        <form id= "paiement">
+            <fieldset>
+                <legend>Votre identité</legend>
+                    <ol>
+                        <li class="field_form">
+                            <label for="nom">Nom</label><br>
+                            <input id="nom" name="nom" type="text" placeholder="Nom"><br>
+                        </li>
+                        <li class="field_form">
+                            <label for="prenom">Prénom</label><br>
+                            <input id="prenom" name="prenom" type="text" placeholder="Prénom"><br>
+                        </li>
+                        <li class="field_form">
+                            <label for=email>Email</label><br>
+                            <input id="email" name="email" type="email" placeholder="exemple@domaine.com"><br>
+                        </li>
+                        <li class="field_form">
+                            <label for="telephone">Téléphone</label><br>
+                            <input id="telephone" name="telephone" type="tel" placeholder="par ex&nbsp;: +33750000000"><br>
+                        </li>
+                    </ol>
+            </fieldset>
+                <fieldset>
+                    <legend>Adresse de livraison</legend>
+                        <ol>
+                            <li class="field_form">
+                                <label for="adresse">Adresse</label><br>
+                                <textarea id="adresse" name="adresse" rows=5></textarea><br>
+                              </li>
+                            <li class="field_form">
+                                <label for="codepostal">Code postal</label><br>
+                                <input id="codepostal" name="codepostal" type="text"><br>
+                              </li>
+                            <li class="field_form">
+                                <label for="pays">Pays</label><br>
+                                <input id="pays" name="pays" type="text">
+                            </li>
+                        </ol>
+                </fieldset>
+                        </br>
+                            <div class="btn">
+                               <button type="submit" class="btn_form_cart"> <a href="payment.html">Valider mes informations</a></button>
+                            </div>
+            </form>
+    </div>
+    </main>
+</body>
+</html>

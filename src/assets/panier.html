@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orinoco - panier </title>
+    <link rel="stylesheet" href="../scss/style.scss">
+</head>
+<body>
+<!-- HEADER -->
+     <header class="header">
+        <a href="index.html"><img class="header_logo" src="../../images/logo_orinoco.png" alt="Logo Orinoco"></a>
+        <nav class="header_nav">
+            <a class="header_panier" href="panier.html"><i class="fas fa-shopping-cart"></i>Panier</a>
+        </nav>  
+    </header>
+
+<!-- CART FORM -->
+
+<main>
+<div class="center-wrapper">
+	<div class="content">
+	<nav>
+		<h1 class="logo">Orinoco</h1>
+		<div class="icons">
+			<i class="fas fa-search"></i>
+			<i class="fas fa-shopping-bag"></i><span style="margin-left: 0.3rem;">1</span>
+		</div>
+	</nav>
+	<div class="top-bar">
+		<a href="index.html"><i class="fas fa-arrow-left"></i>
+		<span>Continue shopping</span></a>
+	</div>
+	<div class="bag">
+		<p class="bag-head"><span style="text-transform: uppercase">Votre panier</span> - 1 élément</p>
+	</div>
+	<div class="bag-product">
+		<div class="image">
+			<img src="" class="product-image">
+		</div>
+		<div class="description">
+			<h1>Camera vintage 1</h1>
+			<p class="description-text">An easy-to-use dive computer with freedive mode and air integration.</p>
+			<h2>825.00</h2>
+			<div class="quantity-wrapper">
+				<div>
+					<label for="quantity" style="margin-right: 0.5rem;">Quantité:</label>
+					<select name="quantity" style="margin-bottom: 1rem;">
+						<option value disabled>Selectionner</option>
+						<option value="1" selected>1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+				</div>
+				<button class="btn-remove">Retirer</button>
+			</div>
+		</div>
+	</div>
+	<div class="bag-total">
+		<div class="subtotal">
+			<p class="small">Subtotal:</p>
+			<p class="small">825.00</p>
+		</div>
+		<div class="delivery">
+			<p class="small">Livraison (Standard - 2 jours ouvrés):<br>
+				<span class="change-delivery">Changer le mode de livraison</span></p>
+			<p class="small">Gratuit</p>
+		</div>
+		<div class="total">
+			<h3>Total:</h3>
+			<h3>825.00</h3>
+		</div>
+		<div class="promo-checkbox">
+			<input type="checkbox" name="promo-check" checked>
+			<label for="promo-check">J'ai un code promo :</label>
+		</div>
+		<div class="promo-code">
+			<input type="text" name="promo-checkbox" placeholder="Entrer votre code promo ici" checked>
+			<button class="apply">Appliquer</button>
+		</div>
+		<button class="btn-go-checkout">
+			<i class="fas fa-lock"></i>
+			<a href="info_client.html"><span>Procéder au paiement</span></a>
+		</button>
+	</div>
+	<div class="help">
+		<p>Besoin d'aide?</p>
+	</div>
+</div>
+</div>
+<div class="bg"></div>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
