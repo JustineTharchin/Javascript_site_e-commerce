@@ -29,52 +29,36 @@ getApiData = () => {
 };
 
 //fonction pour l'affichage des produits en liste sur la page index.html
-async function objectsList() {
+async function pageProduct() {
     let cameras = await getApiData();
     console.table(cameras);
-
-
-    // création d'une boucle FOR OF pour l'affichage en liste des objets
-    for (let camera of cameras) {
-        displayProduct(camera.name, camera.description, camera.imageUrl, camera._id);
-    };
-};
-
-function displayProduct(name, description, imageUrl, id) {
-
-    const parent = document.getElementById("products");
-    console.log(parent)
-     // création des éléments du DOM pour l'affichage des items
-     let cardElt = document.createElement('article');
-     cardElt.classList.add("product");
-     let contentElt = document.createElement('div');
-     let picElt = document.createElement('img');
-     let nameElt = document.createElement('h3');
-     let descriptionElt = document.createElement('p');
-     let btnElt = document.createElement('a');
-
-     // Récupération des données correspondantes à afficher dans les différents éléments du DOM
-
-     picElt.src = imageUrl;
-     nameElt.textContent = name;
-     btnElt.textContent = "Afficher le produit";
-
-     cardElt.appendChild(picElt);
-     cardElt.appendChild(contentElt)
-     contentElt.appendChild(nameElt);
-     contentElt.appendChild(descriptionElt);
-     contentElt.appendChild(btnElt);
-
-     // attribution de class au éléments du DOM nouvellement créés
-     cardElt.classList.add('products');
-     picElt.classList.add('img');
-     contentElt.classList.add('p');
-     btnElt.classList.add('card__btn');
-
-     btnElt.setAttribute('href', 'products.html?id=' + id);
-
-     parent.append(cardElt);
 }
 
-objectsList();
-// displayProduct("Mon Produit", "lorem dsfs dfds sfsfsfds", 	"http://localhost:3000/images/vcam_1.jpg", "fdsffd");
+function displayProduct(name, lenses, price, description, imageUrl, id) {
+
+    const parent = document.getElementById("product_card");
+    console.log(parent)
+     // création des éléments du DOM pour l'affichage des items
+     let cardElt = document.createElement('section');
+     cardElt.classList.add("product_card");
+     let contentElt = document.createElement('div');
+     let picElt = document.createElement('img');
+     let nameElt = document.createElement('h1');
+     let descriptionElt = document.createElement('h2');
+     let btnElt = document.createElement('button');
+}
+
+pageProduct();
+
+//récupération de la chaîne de requête dans l'url
+const queryString_url_id = window.location.search;
+console.log(queryString_url_id);
+
+//enlever le ? qui se trouve avant l'id dans la console: methode 1 extraire juste l'id
+const leId = queryString_url_id.slice(4);
+console.log(leId);
+
+//affichage du produit selectionné par l'id: avec fetch et en mettant la valeur de l'id à la fin de l'url
+//methode .find()
+const idProduitSelectionne = parent.find(element => element.id === _id);
+console.log(idProduitSelectionne);
