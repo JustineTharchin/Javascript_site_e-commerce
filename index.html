@@ -5,101 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orinoco - Accueil </title>
-    <link rel="stylesheet" href="./src/scss/style.scss">
+    <link rel="icon" type="image/png" href="./images/favicon_orinoco.png" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
 <!-- HEADER -->
      <header class="header">
-        <a href="index.html"><img class="header_logo" src="../../images/logo_orinoco.png" alt="Logo Orinoco"></a>
+        <a href="index.html"><img class="header_logo" src="./images/logo_orinoco.png" alt="Logo Orinoco"></a>
         <nav class="header_nav">
             <a class="header_panier" href="panier.html"><i class="fas fa-shopping-cart"></i>Panier</a>
-        </nav>
-                
+        </nav>    
     </header>
-    <main>
+<!-- MAIN PAGE -->
+    <main class="main" id="main">
 
-<!-- HEBERGEMENTS -->
-    <section class="products" id="products">
-        <div class="productMain">
-          <article class="productMainCard">
-            <a href="products.html">
-              <figure class="productMainCardFigure">
-                <img class="productMainCardFigureImg" src="../../images/vcam_1.jpg" alt="camera vintage">
+<!-- PRODUCTS -->
+    <section>
+        <div class="products" id="products">
+          <article class="product" id="product">
+            <a class href="products.html">
+              <figure class="product__figure">
+                <img class="product__img">
                   <figcaption class="productMainCardFigureCaption">
-                    <p>Appareil photo</p>
-                    <h3 class="productMainCardFigureCaptionTitle"> Zeiss Ikon Prontor - Contina</h3>
+                   <h3 class="product__title">
+                    </h3>
                   </figcaption>
               </figure>
-              <p class="productMainCardDesc"><strong>25€</strong></p>
-            </a>
-          </article>
-        </section>
-
-    <section class="products">
-          <div class="productMain">
-            <article class="productMainCard">
-              <a href="#">
-                <figure class="productMainCardFigure">
-                  <img class="productMainCardFigureImg" src="../../images/vcam_2.jpg" alt="camera vintage">
-                    <figcaption class="productMainCardFigureCaption">
-                      <p>Appareil photo</p>
-                      <h3 class="productMainCardFigureCaptionTitle">Nikon</h3>
-                    </figcaption>
-                </figure>
-                  <p class="productMainCardDesc"><strong>25€</strong></p>
-              </a>
-            </article>
-    </section>
-
-    <section class="products">
-        <div class="productMain">
-          <article class="productMainCard">
-            <a href="#">
-              <figure class="productMainCardFigure">
-                <img class="productMainCardFigureImg" src="../../images/vcam_3.jpg" alt="camera vintage">
-                  <figcaption class="productMainCardFigureCaption">
-                    <p>Appareil photo</p>
-                    <h3 class="productMainCardFigureCaptionTitle">Kodak - Eastman</h3>
-                  </figcaption>
-              </figure>
-                <p class="productMainCardDesc"><strong>25€</strong></p>
-            </a>
-          </article>
-    </section>
-
-    <section class="products">
-        <div class="productMain">
-          <article class="productMainCard">
-            <a href="#">
-              <figure class="productMainCardFigure">
-                <img class="productMainCardFigureImg" src="../../images/vcam_4.jpg" alt="camera vintage">
-                  <figcaption class="productMainCardFigureCaption">
-                    <p>Appareil photo</p>
-                    <h3 class="productMainCardFigureCaptionTitle">Minolta</h3>
-                  </figcaption>
-              </figure>
-                <p class="productMainCardDesc"><strong>25€</strong></p>
-            </a>
-          </article>
-      </section>
-
-    <section class="products">
-        <div class="productMain">
-          <article class="productMainCard">
-            <a href="#">
-              <figure class="productMainCardFigure">
-                <img class="productMainCardFigureImg" src="../../images/vcam_5.jpg" alt="camera vintage">
-                  <figcaption class="productMainCardFigureCaption">
-                    <p>Appareil photo</p>
-                    <h3 class="productMainCardFigureCaptionTitle">Samsung</h3>
-                  </figcaption>
-              </figure>
-              <p class="productMainCardDesc"><strong>350€</strong></p>
+              <strong><p class="product__price"></strong></p>
             </a>
           </article>
         </div>
     </section>
   </main>
-
 </body>
 </html>
+
