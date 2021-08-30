@@ -34,31 +34,49 @@ async function pageProduct() {
     console.table(cameras);
 }
 
-function displayProduct(name, lenses, price, description, imageUrl, id) {
-
-    const parent = document.getElementById("product_card");
-    console.log(parent)
-     // création des éléments du DOM pour l'affichage des items
-     let cardElt = document.createElement('section');
-     cardElt.classList.add("product_card");
-     let contentElt = document.createElement('div');
-     let picElt = document.createElement('img');
-     let nameElt = document.createElement('h1');
-     let descriptionElt = document.createElement('h2');
-     let btnElt = document.createElement('button');
-}
-
 pageProduct();
 
-//récupération de la chaîne de requête dans l'url
-const queryString_url_id = window.location.search;
-console.log(queryString_url_id);
+function displayProduct(name, price, description, imageUrl, id) {
 
-//enlever le ? qui se trouve avant l'id dans la console: methode 1 extraire juste l'id
-const leId = queryString_url_id.slice(4);
-console.log(leId);
+	//récupération de la chaîne de requête dans l'url
+	const queryString_url_id = window.location.search;
+	console.log(queryString_url_id);
 
-//affichage du produit selectionné par l'id: avec fetch et en mettant la valeur de l'id à la fin de l'url
+	//enlever le ? qui se trouve avant l'id dans la console: methode 1 extraire juste l'id
+	const reccupId = queryString_url_id.slice(4);
+
+	//affichage du produit selectionné par l'id: avec fetch et en mettant la valeur de l'id à la fin de l'url
 //methode .find()
-const idProduitSelectionne = parent.find(element => element.id === _id);
-console.log(idProduitSelectionne);
+	const idProduitSelectionne = parent.find(element => element._id === id);
+	console.log(idProduitSelectionne);
+	const positionElt = document.querySelector(".product_card");
+
+    const pageCamera = `
+	<section class="product_card" id="product_card">
+	<h1>${idProduitSelectionne.name}</h1>
+			<img src="${idProduitSelectionne.imageUrl}" class="product__image" style="width: 500px;">
+		<div class="product__description">
+			<h2>${idProduitSelectionne.price} €</h2>
+			<p>${idProduitSelectionne.description}</p>
+		</div>
+			<div class="quantity-wrapper">
+					<label for="option" style="margin-right: 0.5rem;">Lenses:</label>
+					<select name="option" style="margin-bottom: 1rem;">
+						<option value disabled>Options<h1>${idProduitSelectionne.lenses}</h1></option>
+						<option value="1" selected>1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+			</div>
+				<button class="btn-go-checkout">
+					<i class="fas fa-shopping-cart"></i>
+					<span>Ajouter au panier</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</section> `;
+positionElt.innerHTML = pageCamera;
+}
+
+displayProduct();
