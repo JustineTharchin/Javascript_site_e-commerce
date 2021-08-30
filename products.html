@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orinoco - Produits </title>
 	<link rel="icon" type="image/png" href="./images/favicon_orinoco.png" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 	<script defer src="./js/products.js"></script>
 </head>
@@ -19,7 +20,6 @@
     </header>
 	
 <!-- CART FORM -->
-
 <main>
 <div class="center-wrapper">
 	<div class="content">
@@ -29,40 +29,35 @@
 			<i class="fas fa-shopping-bag"></i><span style="margin-left: 0.3rem;">1</span>
 		</div>
 	</nav>
-	<div class="top-bar">
-		<a href="index.html"><i class="fas fa-arrow-left"></i></a>
-	</div>
-
+		<div class="top-bar">
+			<a href="index.html"><i class="fas fa-arrow-left"></i></a>
+		</div>
+		<h1></h1>
 	<section class="product_card" id="product_card">
 			<img src="" class="product__image" style="width: 500px;">
 		<div class="product__description">
-			<h1></h1>
 			<h2></h2>
+			<p class= "description_produit"></p>
+		</div>
 			<div class="quantity-wrapper">
-				<div>
 					<label for="option" style="margin-right: 0.5rem;">Option:</label>
 					<select name="option" style="margin-bottom: 1rem;">
-						<option value disabled>Please select</option>
+						<option value disabled>Options</option>
 						<option value="1" selected>1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select>
-				</div>
+			</div>
+				<button class="btn-go-checkout">
+					<i class="fas fa-shopping-cart"></i>
+					<span>Ajouter au panier</span>
+				</button>
 			</div>
 		</div>
-	</section>
-	<div class="bag-total">
-		<div class="delivery">
-			<p class="small">Livraison (Standard - 2 jours ouvrés):<br>
-			<p class="small">Gratuit</p>
-		</div>
-		<button class="btn-go-checkout">
-			<i class="fas fa-shopping-cart"></i>
-			<span>Ajouter au panier</span>
-		</button>
 	</div>
-</div>
-</div>
-<div class="bg"></div>
+	</section>
+</main>
+</body>
+</html>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
