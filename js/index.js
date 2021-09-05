@@ -25,6 +25,7 @@ getApiData = () => {
                 apiFail.classList.add('fail__msg');
                 apiFail.innerHTML = "Veuillez démarrer le serveur";
                 console.error(error);
+                alert("sds");
             });
 };
 
@@ -36,11 +37,11 @@ async function objectsList() {
 
     // création d'une boucle FOR OF pour l'affichage en liste des objets
     for (let camera of cameras) {
-        displayProduct(camera.name, camera.description, camera.imageUrl, camera._id);
+        displayProduct(camera.name, camera.imageUrl, camera._id);
     };
 };
 
-function displayProduct(name, description, imageUrl, id) {
+function displayProduct(name, imageUrl, id) {
 
     const parent = document.getElementById("products");
     console.log(parent)
@@ -71,10 +72,9 @@ function displayProduct(name, description, imageUrl, id) {
      contentElt.classList.add('p');
      btnElt.classList.add('card__btn');
 
-     btnElt.setAttribute('href', 'products.html?id=' + id);
+     btnElt.setAttribute('href', 'product.html?id=' + id);
 
      parent.append(cardElt);
 }
 
 objectsList();
-// displayProduct("Mon Produit", "lorem dsfs dfds sfsfsfds", 	"http://localhost:3000/images/vcam_1.jpg", "fdsffd");
