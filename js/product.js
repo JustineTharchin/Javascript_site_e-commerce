@@ -80,34 +80,34 @@ sentCart.addEventListener("click", (event) => {
 	event.preventDefault();
 
 	//ajout dans le panier. Aller dans le localstorage et verifier s'il y a quelquechose: key="produits"
-	let cart = JSON.parse(localStorage.getItem("product_card"));
+	let cart = JSON.parse(localStorage.getItem("selected_product"));
 	//transformer fichier JSON en fichier javascript
 
 	//fonction cartConfirmation
 	//const cartConfirmation = () =>{
-		//if(window.confirm(`${name}a bien été ajouté au panier
-		//OK pour aller au panier ou ANNULER pour revenir à l'accueil`)) {
-			//window.location.href = "cart.html";
-		//}else {
-			//window.location.href = "index.html";
-		//}
+		if(window.confirm(`${name}a bien été ajouté au panier`)) {
+			window.location.href = "cart.html";
+		}else {
+			window.location.href = "index.html";
+		}
 	//}
 
 	//cas ou il y a une clé dans le localstorage
 	if(cart){
-		cart.push(name, price, id);
-		localStorage.setItem("product_card", JSON.stringify(cart));
+		cart.push(name, price, lenses, imageURL, id);
+		localStorage.setItem("selected_product", JSON.stringify(cart));
 		console.log(cart);
 		//cartConfirmation();
 	}
 	//cas ou il n'y a pas de clés dans le localstorage
 	else{
 		cart = [];
-		cart.push(name, price, id);
-		localStorage.setItem("product_card", JSON.stringify(cart));
+		cart.push(name, price, lenses, imageUrl, id);
+		localStorage.setItem("selected_product", JSON.stringify(cart));
 		console.log(cart);
 		//cartConfirmation();
 	}
 });
 }
 getApiData();
+
