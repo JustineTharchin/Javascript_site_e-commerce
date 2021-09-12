@@ -39,9 +39,11 @@ function displayProduct(name, price, description, imageUrl, lenses, id) {
 	console.log(idProduitSelectionne);
 	const positionElt = document.querySelector(".product_card");
 
-	const lensString = document.querySelector(".options");
-		for(var i = 0; i <lenses.length; i++) {
+	let lensString = "";
+
+		for(var i = 0; i < lenses.length; i++) {
 		console.log(lenses[i]);
+		 lensString = lensString +  `<option value="${i}" selected>${lenses[i]}</option>`;
 		}
 	
 
@@ -57,9 +59,7 @@ function displayProduct(name, price, description, imageUrl, lenses, id) {
 					<label for="options" style="margin-right: 0.5rem;">Lenses:</label>
 					<select id="options" style="margin-bottom: 1rem;">
 					<option value disabled>Lentilles</option>
-						<option value="1" selected>${lenses[0]}</option>
-						<option value="2">${lenses[1]}</option>
-						<option value="2">${lenses[2]}</option>
+					${lensString}
 					</select>
 			</div>
 				<button class="btn-go-checkout" type="submit">
@@ -85,16 +85,16 @@ sentCart.addEventListener("click", (event) => {
 
 	//fonction cartConfirmation
 	//const cartConfirmation = () =>{
-		if(window.confirm(`${name}a bien été ajouté au panier`)) {
-			window.location.href = "cart.html";
-		}else {
-			window.location.href = "index.html";
-		}
+		//if(window.confirm(`${name}a bien été ajouté au panier`)) {
+		//	window.location.href = "cart.html";
+		//}else {
+		//	window.location.href = "index.html";
+		//}
 	//}
 
 	//cas ou il y a une clé dans le localstorage
 	if(cart){
-		cart.push(name, price, lenses, imageURL, id);
+		cart.push(name, price, lenses, imageUrl, id);
 		localStorage.setItem("selected_product", JSON.stringify(cart));
 		console.log(cart);
 		//cartConfirmation();
@@ -110,4 +110,15 @@ sentCart.addEventListener("click", (event) => {
 });
 }
 getApiData();
+let cart = [];
+let singleProduct = {
+	name: cart[0],
+    price: cart[1],
+    lenses: cart[2],
+	imageUrl: cart[3],
+    id: cart[4],
+  };
+  cart.push(singleProduct);
+  localStorage.setItem('selected_product', JSON.stringify(cart));
+
 
