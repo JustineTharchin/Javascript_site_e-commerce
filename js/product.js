@@ -1,29 +1,16 @@
 const url = `http://localhost:3000/api/cameras/`;
-const basket = JSON.parse(localStorage.getItem("cameras")) || [];
+const cart = JSON.parse(localStorage.getItem("cameras")) || [];
 
 // création de la class produit
 class Product {
-    constructor(id, name, description, price, option, quantity, imgurl) {
+    constructor(id, name, description, price, option, quantity, imageUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.price = +price;
+        this.price = price;
         this.option = option;
-        this.quantity = +quantity;
-        this.imgurl = imgurl;
-    }
-}
-
-//Mise à jour du basketPreview
-function basketPreview() {
-    if (basket.length == 0) {
-    } else {
-        let addBasketPreview = document.getElementById("basketPreview");
-        let calculBasketPreview = 0;
-        for (product of basket) {
-            calculBasketPreview += product.quantity;
-        }
-        addBasketPreview.innerHTML = `Panier <span class="badge rounded-pill bg-secondary align-middle my-auto">${calculBasketPreview}</span>`;
+        this.quantity = quantity;
+        this.imageUrl = imageUrl;
     }
 }
 
@@ -33,7 +20,6 @@ function convertPrice(productPrice) {
     price = Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "EUR",
-        minimumFractionDigits: 2,
     }).format(price / 100);
     return price;
 }
@@ -81,8 +67,8 @@ fetch(newUrl)
             }
         }
 
-        const btnAddBasket = document.getElementById("btnAddBasket");
-        btnAddBasket.addEventListener("click", (e) => {
+        const btnAddToCart = document.getElementById("btnAddToCart");
+        btnAddToCart.addEventListener("click", (e) => {
             e.preventDefault();
             const list = document.getElementById("option");
             const quantity = document.getElementById("quantity");
@@ -98,26 +84,25 @@ fetch(newUrl)
                 product.imageUrl
             );
             // vérifie s'il est déja présent
-            // si oui, dejaPresent en true et sauvegarde sa place dans le localStorage
+            // si oui, deja présent en true et sauvegarde sa place dans le localStorage
             let isAlreadyPresent = false;
             let indexModification;
-            for (products of basket) {
+            for (products of cart) {
                 switch (products.option) {
-                    case objectProduct.option:
+                    case objectProduct:
                         isAlreadyPresent = true;
-                        indexModification = basket.indexOf(products);
                 }
             }
 
-            // si déjaPresent incrémente seulement la quantité
+            // si déja présent incrémente seulement la quantité
             if (isAlreadyPresent) {
-                basket[indexModification].quantity =
-                    +basket[indexModification].quantity + +objectProduct.quantity;
-                localStorage.setItem("cameras", JSON.stringify(basket));
+                cart[indexModification].quantity =
+                    +cart[indexModification].quantity + +objectProduct.quantity;
+                localStorage.setItem("cameras", JSON.stringify(cart));
                 // si non, ajoute le produit au localStorage
             } else {
-                basket.push(objectProduct);
-                localStorage.setItem("cameras", JSON.stringify(basket));
+                cart.push(objectProduct);
+                localStorage.setItem("cameras", JSON.stringify(cart));
             }
         });
     });

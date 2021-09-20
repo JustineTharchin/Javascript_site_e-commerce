@@ -1,6 +1,6 @@
 const url = `http://localhost:3000/api/cameras/`;
 const basket = JSON.parse(localStorage.getItem("cameras")) || [];
-//Définition d'une constante pour l'url de la requête GET Api
+
 const URL = "http://localhost:3000/api/cameras/";
 
 // convertir le prix
@@ -9,7 +9,6 @@ function convertPrice(productPrice) {
     price = Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "EUR",
-        minimumFractionDigits: 2,
     }).format(price / 100);
     return price;
 }
@@ -44,7 +43,6 @@ function addCards(data) {
                           <h5 class="card-title">${price}</h5>
                       </div>
                   </div>
-                  <p class="card-text text-truncate">${produit.description}</p>
                   <a href="product.html?_id=${produit._id}" class="btn btn-secondary">Afficher le produit</a>
               </div>
           </div>
