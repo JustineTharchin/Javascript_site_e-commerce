@@ -1,9 +1,11 @@
-const url = `http://localhost:3000/api/cameras/`;
-const basket = JSON.parse(localStorage.getItem("cameras")) || [];
+const Url = `http://localhost:3000/api/cameras/`;
 
-const URL = "http://localhost:3000/api/cameras/";
+fetch(Url)
+    .then((response) => response.json())
+    .then((data) => {
+        addCameras(data);
+    })
 
-// convertir le prix
 function convertPrice(productPrice) {
     let price = `${productPrice}`;
     price = Intl.NumberFormat("fr-FR", {
@@ -13,22 +15,9 @@ function convertPrice(productPrice) {
     return price;
 }
 
-
-//fetch de l'URL
-fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-        addCards(data);
-    })
-    .catch((erreur) => console.log("erreur : " + erreur));
-
-// fonction pour la création des cards de la page d'accueil
-function addCards(data) {
-    //boucle pour chaque iteration d'un produit
+function addCameras(data) {
     for (produit of data) {
-        //recupère l'élément liste dans le HTML
         const card = document.getElementById("liste");
-        //convertit le prix
         const price = convertPrice(produit.price);
         card.innerHTML += `
       <div class="col-sm-12 col-md-6 col-lg-6 pb-3  ">
@@ -43,7 +32,7 @@ function addCards(data) {
                           <h5 class="card-title">${price}</h5>
                       </div>
                   </div>
-                  <a href="product.html?_id=${produit._id}" class="btn btn-secondary">Afficher le produit</a>
+                  <a href="product.html?_id=${produit._id}" class="btn btn-light" style="color: black;">Afficher le produit</a>
               </div>
           </div>
       </div>`;
