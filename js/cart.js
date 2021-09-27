@@ -77,14 +77,14 @@ if (cart.length < 1) {
     }
 
     function minusProduct(event) {
-        if(quantity < 0
-            ){
-        const index = event.target.getAttribute("data-index"); 
-        cart[index].quantity--;
+        const index = event.target.getAttribute("data-index");
+        if(cart[index].quantity > 0){
+            cart[index].quantity--;
+        }else {
+            cart[index].clear(); 
         }
         localStorage.setItem("cameras", JSON.stringify(cart));
         location.reload();
-        
     }
 
     const buttonMinus = document.getElementsByClassName("minus");
@@ -105,4 +105,48 @@ if (cart.length < 1) {
         location.reload();
     });
 
+
+//CONTACT FORMULAIRE
+
+    //validation du formulaire et envoie en POST
+    const order = document.getElementById("order");
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const city = document.getElementById("city");
+    const mail = document.getElementById("email");
+    const address = document.getElementById("adress");
+    const checkBox = document.getElementById("invalidCheck2");
+
+    order.addEventListener("click", (event) => {
+        // on prépare les infos pour l'envoie en POST
+        let contact = {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            address: document.getElementById("address").value,
+            city: document.getElementById("city").value,
+            email: document.getElementById("email").value,
+        };
+    
+            event.preventDefault();
+
+            let products = [];
+            for (selectedCameras of cart) {
+                products.push(selectedCameras.id);
+            }
+
+            fetch("http://localhost:3000/api/cameras/order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ contact, products }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    localStorage.setItem("order", JSON.stringify(data));
+                    document.location.href = "order.html";
+                })
+                .catch((erreur) => console.log("erreur : " + erreur));
+      
+    });
 }

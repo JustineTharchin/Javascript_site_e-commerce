@@ -70,17 +70,13 @@ fetch(newUrl)
             );
 
             const idx = cart.findIndex((camera) => camera.id ===  newId);
-                console.log(idx)
+            console.log(idx);
                 
             if(idx === -1){
                 cart.push(objectCamera);
             }else {
                 cart[idx].quantity = cart[idx].quantity + objectCamera.quantity;
             }
-                
-                
-                
                 localStorage.setItem("cameras", JSON.stringify(cart));
-            // }
         });
     });
