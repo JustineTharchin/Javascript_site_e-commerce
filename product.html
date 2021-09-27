@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Orinoco - Produits </title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+	  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="./backend/images/favicon_orinoco.png" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	
+    <script defer src="./js/product.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+	</script>
+</head>
+<body>
+<!-- HEADER -->
+     <header class="header">
+        <a href="index.html"><img class="header_logo" src="./backend/images/logo_orinoco.png" alt="Logo Orinoco"></a>
+        <nav class="header_nav">
+            <a class="header_panier" href="cart.html" id="cartPreview"><i class="fas fa-shopping-cart"></i></a>
+        </nav>  
+    </header>
+	
+<main>
+<section class="mx-3 my-5">
+    <div class="card px-0 mx-3 my-4 border-0">
+        <div class="row g-0 shadow p-3 bg-body rounded" id="product">
+            <div class="col-md-7" id="productImage">
+            </div>
+            <div class="col-md-5">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 col-sm-7 mt-3" id="productName">
+                        </div>
+                        <div class="col-6 col-sm-5 text-end mt-3" id="productPrice">
+                        </div>
+                    </div>
+                    <select id="option" class="form-select mb-3" aria-label="choisir la version">
+                    </select>
+                    <div class="mb-3" id="productDescription">
+                    </div>
+                    <div class="row">
+                        <div class="col-5 col-sm-3 col-md-5 col-lg-4 col-xl-3 my-auto">
+                            <p>Quantité :</p>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md-4 col-lg-3 ">
+                            <select id="quantity" class="form-select mb-3" aria-label="Quantité">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="btnAddToCart" class="btn btn-light" data-bs-toggle="modal"
+                            data-bs-target="#myModal">Ajouter au panier</button>
+                </div>
+                <div class="toast show position-absolute top-50 start-50 translate-middle bg-danger" id="myToast"
+                     hidden>
+                    <div id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex my-2">
+                            <div class="toast-body me-auto py-0 text-white" id="message">
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2" data-bs-dismiss="toast"
+                                    aria-label="Close" id="closeToast"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Produit ajouté</h5>
+            </div>
+            <div class="modal-body">
+                <p>Votre produit a bien été ajouté au panier</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary" type="button" href="cart.html">Voir mon panier</a>
+                <a class="btn btn-success" type="button" href="../index.html">Voir nos autres produits</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>
+
+
