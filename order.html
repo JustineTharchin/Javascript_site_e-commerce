@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orinoco - Confirmation de paiement </title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <link rel="icon" href="./backend/images/favicon_orinoco.png" />
-    <title>Orinoco - Confirmation de paiement</title>
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+	 integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     
+    <link rel="icon" type="image/png" href="./backend/images/favicon_orinoco.png" />
     <link rel="stylesheet" href="style.css">
-    <script defer src="./js/order.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
-    </head>
+
+	<script src="https://kit.fontawesome.com/fd986726cd.js" crossorigin="anonymous"></script>
+	<script defer src="./js/order.js"></script>
+</head>
 
 <body>
-
 <!-- HEADER -->
-<header class="header">
-    <a href="index.html"><img class="header_logo" src="./backend/images/logo_orinoco.png" alt="Logo Orinoco"></a>
-</header>
+     <header class="header">
+        <a href="index.html"><img class="header_logo" src="./backend/images/logo_orinoco.png" alt="Logo Orinoco"></a>
+        <nav class="header_nav">
+            <a class="header_panier" href="cart.html" id="cartPreview"><i class="fas fa-shopping-cart"></i></a>
+        </nav>  
+    </header>
 
-<section id="contact" class="mx-5 px-0 px-lg-5">
+<!-- INFORMATIONS CONTACT -->
+<section id="contact">
+    <p class="text-center fs-2 my-5 text-dark">Récapitulatif de votre commande</p>
 </section>
 
-<section id="section" class="container my-5 align-middle border-top border-dark">
-    <p class="text-center fs-2 my-5 bg-light text-black">Récapitulatif de la commande</p>
+<section id="section">
     <div class="table-responsive">
         <table class="table table-hover my-auto mx-0">
             <thead>
             <tr class="text-center fs-5">
-                <th scole="col">Produit</th>
-                <th scole="col">Nom</th>
-                <th scole="col">Option</th>
-                <th scole="col">Quantité</th>
-                <th scole="col">Prix</th>
-                <th scole="col" class="bg-light">Sous-total</th>
+                <th>Produit</th>
+                <th>Nom</th>
+                <th>Option</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th class="bg-light">Sous-total</th>
             </tr>
             </thead>
-            <tbody id="productsBasket">
+            <tbody id="productsInCart">
 
             </tbody>
             <tfoot>
@@ -53,11 +54,11 @@
             </tr>
             </tfoot>
         </table>
+        <div class="px-5 mx-5 my-4 d-md-flex justify-content-md-end">
+            <button type="submit" class="btn btn-dark mx-5 text-center" id="print">Imprimer ma facture</button>
+        </div>
     </div>
 </section>
-<div class="px-5 mx-5 my-4 d-md-flex justify-content-md-end">
-    <button type="submit" class="btn btn-light mx-5 align-end" id="print">Imprimer la commande</button>
-</div>
 
 </body>
 </html>
